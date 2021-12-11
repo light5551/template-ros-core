@@ -16,8 +16,9 @@ class MyNode(DTROS):
         self.pub = rospy.Publisher("~car_cmd", Twist2DStamped, queue_size=1)
         self.bridge = CvBridge()
         self.cur_img = None
-        env = get_env()
-        self.model = registy(True)
+        #env = get_env()
+        self.model = checkpoint_path = "./models/checkpoint-391"
+        #registy(True)
         self.sub_image = rospy.Subscriber(
             "/autobot20/camera_node/image/compressed",
             #"~image",

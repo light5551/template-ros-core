@@ -2,6 +2,3 @@
 numpy
 opencv-python
 gym
-ray[tune]
-ray[rllib]
-ray[serve]
