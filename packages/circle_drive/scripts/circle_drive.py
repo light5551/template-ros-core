@@ -6,7 +6,7 @@ from duckietown_msgs.msg import Twist2DStamped
 from sensor_msgs.msg import CompressedImage
 from cv_bridge import CvBridge
 from solution import solution
-from run import registy
+from run import get_env, registy
 
 
 class MyNode(DTROS):
@@ -16,6 +16,7 @@ class MyNode(DTROS):
         self.pub = rospy.Publisher("~car_cmd", Twist2DStamped, queue_size=1)
         self.bridge = CvBridge()
         self.cur_img = None
+        env = get_env()
         self.model = registy(True)
         self.sub_image = rospy.Subscriber(
             "/autobot20/camera_node/image/compressed",

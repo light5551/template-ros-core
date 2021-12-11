@@ -1,9 +1,10 @@
+from run import get_env
 import torch 
 import numpy as np
 from wrappers.general_wrappers import DTPytorchWrapper, get_wrappers, print_all_wrappers
 from wrappers.action_wpappers import Heading2WheelVelsWrapper, LeftRightBraking2WheelVelsWrapper
 
-obs_wrappers = get_wrappers()
+obs_wrappers = get_wrappers(get_env())
 
 def solution(obs, model):
     #print(obs.shape)
