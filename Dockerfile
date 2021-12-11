@@ -28,7 +28,7 @@ RUN apt-get update \
 # install python dependencies
 RUN pip install -r ${REPO_PATH}/dependencies-py.txt
 #RUN pip install https://github.com/smorad/arm64-popular-wheels/blob/master/aarch64/ubuntu_20.04/ray-1.5.1-cp38-cp38-linux_aarch64.whl
-RUN pip install pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-2.0.0.dev0-cp38-cp38-linux_aarch64.whl
+RUN pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-2.0.0.dev0-cp38-linux_aarch64.whl
 # copy the source code
 COPY . "${REPO_PATH}/"
 
